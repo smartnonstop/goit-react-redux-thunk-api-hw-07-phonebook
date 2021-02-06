@@ -4,6 +4,7 @@ import ContactForm from './ContactForm';
 import Filter from './Filter';
 import ContactList from './ContactList';
 import contactOperations from './../redux/contacts/contactsOperations';
+import contactSelectors from './../redux/contacts/contactsSelectors';
 
 class App extends Component {
 
@@ -27,7 +28,7 @@ class App extends Component {
 }
 
 const mapStateToProps = state => ({
-  loading: state.contacts.loading
+  loading: contactSelectors.getLoading(state),
 });
 
 const mapDispatchToProps = {
